@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <title>Product Details</title>
+</head>
+
+<body>
+<div class="container mt-5">
+
+    <h3>Product Details</h3>
+
+    <div class="d-flex gap-2 mb-3">
+        <a th:href="@{/}" class="btn btn-primary">Main Page</a>
+        <a th:href="@{/products/categories/{categoryId}(categoryId=${product.categoryId})}" class="btn btn-primary">Back to the product category
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <h4 class="card-title" th:text="${product.name}"></h4>
+
+            <p class="card-text">
+                <strong>Price:</strong>
+                <span th:text="${product.price}"></span>
+            </p>
+
+            <p class="card-text">
+                <strong>Description:</strong>
+                <span th:text="${product.description}"></span>
+            </p>
+
+            <form th:action="@{/transaction/{id}(id=${product.id})}" method="POST">
+                <button type="submit" class="btn btn-success">Buy Product</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
