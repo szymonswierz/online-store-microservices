@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS token;
+USE token;
+
+CREATE TABLE IF NOT EXISTS tokens (
+    id INT PRIMARY KEY,
+    uuid CHAR(36) NOT NULL
+);
