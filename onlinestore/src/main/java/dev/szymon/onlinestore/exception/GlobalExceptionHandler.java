@@ -44,9 +44,17 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(FeignException.class)
-    public String handleFeignException(FeignException exception, Model model) {
+    public String handleFeignException(FeignException exception,
+                                       Model model) {
 
         model.addAttribute("errorMessage", exception.contentUTF8());
+        return "error-page";
+    }
+
+    @ExceptionHandler(InvalidUserDataException.class)
+    public String handleInvalidUserData(InvalidUserDataException exception,
+                                        Model model) {
+        model.addAttribute("errorMessage", exception.getMessage());
         return "error-page";
     }
 

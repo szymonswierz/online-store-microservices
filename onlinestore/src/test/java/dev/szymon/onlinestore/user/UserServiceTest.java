@@ -1,5 +1,6 @@
 package dev.szymon.onlinestore.user;
 
+import dev.szymon.onlinestore.exception.InvalidUserDataException;
 import dev.szymon.onlinestore.exception.UserAlreadyExistsException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -62,6 +63,48 @@ public class UserServiceTest {
         when(userRepository.existsByUsername(username)).thenReturn(true);
 
         assertThrows(UserAlreadyExistsException.class, () -> userService.registerUser(username, password, email));
+    }
+
+    @Test
+    void shouldThrowExceptionInvalidUserDataWhenUsernameIsEmpty() {
+
+        assertThrows(InvalidUserDataException.class, () -> userService.registerUser("", "jan123","jan123@gmail.com"));
+
+    }
+
+    @Test
+    void shouldThrowExceptionInvalidUserDataWhenUsernameContainsOnlySpaces() {
+
+        assertThrows(InvalidUserDataException.class, () -> userService.registerUser( "   ", "jan123","jan123@gmail.com"));
+
+    }
+
+    @Test
+    void shouldThrowExceptionInvalidUserDataWhenPasswordIsEmpty() {
+
+        assertThrows(InvalidUserDataException.class, () -> userService.registerUser("jan123", "","jan123@gmail.com"));
+
+    }
+
+    @Test
+    void shouldThrowExceptionInvalidUserDataWhenPasswordContainsOnlySpaces() {
+
+        assertThrows(InvalidUserDataException.class, () -> userService.registerUser("jan123", "   ","jan123@gmail.com"));
+
+    }
+
+    @Test
+    void shouldThrowExceptionInvalidUserDataWhenEmailIsEmpty() {
+
+        assertThrows(InvalidUserDataException.class, () -> userService.registerUser("jan123", "jan123",""));
+
+    }
+
+    @Test
+    void shouldThrowExceptionInvalidUserDataWhenEmailContainsOnlySpaces() {
+
+        assertThrows(InvalidUserDataException.class, () -> userService.registerUser("jan123", "jan123","   "));
+
     }
 
 }
