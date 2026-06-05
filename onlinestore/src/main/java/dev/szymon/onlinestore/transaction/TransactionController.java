@@ -35,10 +35,7 @@ public class TransactionController {
 
         String uuid = tokenService.processToken(userId);
 
-        System.out.println("UUID received in onlinestore: " + uuid);
-
-        String newTransaction = bankService.sendTransactionToBank(uuid, userId, productEntity.getPrice());
-        System.out.println("New transaction in the bankapp: " + newTransaction);
+        bankService.sendTransactionToBank(uuid, userId, productEntity.getPrice());
 
         return "transaction-confirmation";
     }
