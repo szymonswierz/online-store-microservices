@@ -297,47 +297,47 @@ http://localhost:8080
 
 ### Main Page
 
-![Main Page](screenshots/main.png)
+![Main Page](screenshots/main.PNG)
 
 ### Login Page
 
-![Login Page](screenshots/login.png)
+![Login Page](screenshots/login.PNG)
 
 ### Register Page
 
-![Register Page](screenshots/register.png)
+![Register Page](screenshots/register.PNG)
 
 ### Registration Confirmation
 
-![Registration Confirmation](screenshots/register-confirmation.png)
+![Registration Confirmation](screenshots/register-confirmation.PNG)
 
 ### Categories Page
 
-![Categories Page](screenshots/categories.png)
+![Categories Page](screenshots/categories.PNG)
 
 ### Products Page
 
-![Products Page](screenshots/products.png)
+![Products Page](screenshots/products.PNG)
 
 ### Product Details Page
 
-![Product Details Page](screenshots/product.png)
+![Product Details Page](screenshots/product.PNG)
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.PNG)
 
 ### Empty Dashboard
 
-![Empty Dashboard](screenshots/empty-dashboard.png)
+![Empty Dashboard](screenshots/empty-dashboard.PNG)
 
 ### Transaction Confirmation
 
-![Transaction Confirmation](screenshots/transaction-confirmation.png)
+![Transaction Confirmation](screenshots/transaction-confirmation.PNG)
 
 ### Error Page
 
-![Error Page](screenshots/error-page.png)
+![Error Page](screenshots/error-page.PNG)
 
 ---
 
