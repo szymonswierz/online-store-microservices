@@ -13,7 +13,8 @@ online-store-microservices
 ├── onlinestore
 ├── bankapp
 ├── tokenapp
-└── sql
+├── sql
+└── screenshots
 ```
 
 ---
@@ -27,6 +28,7 @@ Main web application available on port `8080`.
 Responsibilities:
 
 * user registration
+* registration input validation
 * user login with Spring Security
 * displaying categories and products
 * product search
@@ -175,6 +177,8 @@ sql
 
 The scripts create the required databases, tables and sample product/category data for `onlinestore`.
 
+The `products.category_id` column is connected with `categories.id` using a foreign key constraint.
+
 ---
 
 ## Database Tables
@@ -219,7 +223,7 @@ Before running the applications:
 
 ```bash
 cd tokenapp
-mvn spring-boot:run
+mvnw.cmd spring-boot:run
 ```
 
 Application starts on:
@@ -232,7 +236,7 @@ http://localhost:8082
 
 ```bash
 cd bankapp
-mvn spring-boot:run
+mvnw.cmd spring-boot:run
 ```
 
 Application starts on:
@@ -245,7 +249,7 @@ http://localhost:8081
 
 ```bash
 cd onlinestore
-mvn spring-boot:run
+mvnw.cmd spring-boot:run
 ```
 
 Application starts on:
@@ -267,6 +271,7 @@ http://localhost:8080
 ### User features
 
 * registration
+* registration input validation
 * login
 * category browsing
 * product browsing
@@ -283,6 +288,56 @@ http://localhost:8080
 * automatic bank account creation
 * global exception handling
 * unit tests for service layer
+* SQL scripts for database setup
+* foreign key between products and categories
+
+---
+
+## Screenshots
+
+### Main Page
+
+![Main Page](screenshots/main.png)
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Register Page
+
+![Register Page](screenshots/register.png)
+
+### Registration Confirmation
+
+![Registration Confirmation](screenshots/register-confirmation.png)
+
+### Categories Page
+
+![Categories Page](screenshots/categories.png)
+
+### Products Page
+
+![Products Page](screenshots/products.png)
+
+### Product Details Page
+
+![Product Details Page](screenshots/product.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Empty Dashboard
+
+![Empty Dashboard](screenshots/empty-dashboard.png)
+
+### Transaction Confirmation
+
+![Transaction Confirmation](screenshots/transaction-confirmation.png)
+
+### Error Page
+
+![Error Page](screenshots/error-page.png)
 
 ---
 
@@ -294,6 +349,7 @@ Examples:
 
 * product not found
 * user already exists
+* invalid user registration data
 * token generation failed
 * token download failed
 * transaction failed
@@ -332,17 +388,17 @@ Run tests separately for each application:
 
 ```bash
 cd onlinestore
-mvn test
+mvnw.cmd test
 ```
 
 ```bash
 cd bankapp
-mvn test
+mvnw.cmd test
 ```
 
 ```bash
 cd tokenapp
-mvn test
+mvnw.cmd test
 ```
 
 ---
@@ -374,6 +430,7 @@ Implemented:
 
 * three Spring Boot applications
 * user registration and login
+* registration input validation
 * product and category views
 * product search
 * transaction flow
@@ -383,9 +440,12 @@ Implemented:
 * global exception handling
 * unit tests for service layer
 * SQL scripts for database setup and sample data
+* foreign key between products and categories
+* application screenshots in README
 
 Possible future improvements:
 
-* screenshots in README
 * controller tests
 * integration tests
+* logging configuration
+* Docker Compose setup
