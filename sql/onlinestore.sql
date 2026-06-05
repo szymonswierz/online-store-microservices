@@ -18,7 +18,9 @@ CREATE TABLE IF NOT EXISTS products (
     name VARCHAR(255) NOT NULL,
     price DOUBLE NOT NULL,
     description VARCHAR(1000),
-    category_id INT NOT NULL
+    category_id INT NOT NULL,
+    CONSTRAINT fk_products_categories
+        FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
 INSERT INTO categories (id, name) VALUES
