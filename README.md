@@ -447,5 +447,3 @@ Possible future improvements:
 
 * controller tests
 * integration tests
-* logging configuration
-* Docker Compose setup
